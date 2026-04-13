@@ -14,7 +14,7 @@ extension AppInfo {
     }
 
     public static var majorAppVersion: String {
-        return appVersion.components(separatedBy: ".").first!
+        return appVersion.components(separatedBy: ".").first ?? "0"
     }
 
     // FIXME: FXIOS-13210 nonisolated(unsafe) because some tests need to mutate this global state
