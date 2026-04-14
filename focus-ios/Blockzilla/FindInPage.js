@@ -42,11 +42,34 @@ const HIGHLIGHT_CSS =
   background-color: ${HIGHLIGHT_COLOR};
   border-radius: 1px;
   box-shadow: 0 0 0 2px ${HIGHLIGHT_COLOR};
+  outline: 1px solid rgba(0, 0, 0, 0.3);
   transition: all ${SCROLL_DURATION}ms ease ${SCROLL_DURATION}ms;
 }
 .${HIGHLIGHT_CLASS_NAME}.${HIGHLIGHT_CLASS_NAME_ACTIVE} {
   background-color: ${HIGHLIGHT_COLOR_ACTIVE};
   box-shadow: 0 0 0 4px ${HIGHLIGHT_COLOR_ACTIVE},0 1px 3px 3px rgba(0,0,0,.75);
+  outline: 2px solid #000;
+}
+@media (prefers-color-scheme: dark) {
+  .${HIGHLIGHT_CLASS_NAME} {
+    outline-color: rgba(255, 255, 255, 0.4);
+  }
+  .${HIGHLIGHT_CLASS_NAME}.${HIGHLIGHT_CLASS_NAME_ACTIVE} {
+    outline-color: #fff;
+  }
+}
+@media (prefers-contrast: more) {
+  .${HIGHLIGHT_CLASS_NAME} {
+    background-color: #ff0;
+    box-shadow: 0 0 0 2px #ff0;
+    outline: 2px solid #000;
+  }
+  .${HIGHLIGHT_CLASS_NAME}.${HIGHLIGHT_CLASS_NAME_ACTIVE} {
+    background-color: #f60;
+    box-shadow: 0 0 0 4px #f60;
+    outline: 3px solid #000;
+    text-decoration: underline;
+  }
 }`;
 
 var lastEscapedQuery = "";
